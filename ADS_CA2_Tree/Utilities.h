@@ -77,3 +77,9 @@ vector<string> splitString(string str, string delimiter)
 
 	return words;
 }
+
+template <typename K,typename E>
+void printBT(TNode<K, E>* node)
+{
+	printBT("", node, true);
+};
