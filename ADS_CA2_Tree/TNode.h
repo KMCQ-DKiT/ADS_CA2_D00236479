@@ -29,7 +29,11 @@ public:
 
 	void add(K keyItem, E item);
 
+	void setLeft(TNode<K, E>* l);
+	void setRight(TNode<K, E>* r);
 
+
+	int count();
 
 	E getItem();
 
@@ -58,7 +62,6 @@ template <typename K,typename E>
 E TNode<K,E>::getItem()
 {
 	return this->data;
-	return this->key;
 
 }
 
@@ -119,6 +122,8 @@ void TNode<K, E>::add(K keyItem, E item)
 		{
 			pLeft = new TNode<K, E>();
 			pLeft->data = item;
+			pLeft->key = keyItem;
+		
 
 		}
 		else
@@ -135,6 +140,8 @@ void TNode<K, E>::add(K keyItem, E item)
 		{
 			pRight = new TNode<K, E>();
 			pRight->data = item;
+			pRight->key = keyItem;
+
 		}
 		else
 		{
@@ -147,6 +154,8 @@ void TNode<K, E>::add(K keyItem, E item)
 		{
 			pLeft = new TNode<K, E>();
 			pLeft->data = item;
+			pLeft->key = keyItem;
+
 
 		}
 		else
@@ -161,6 +170,8 @@ void TNode<K, E>::add(K keyItem, E item)
 		{
 			pRight = new TNode<K, E>();
 			pRight->data = item;
+			pRight->key = keyItem;
+
 		}
 		else
 		{
@@ -173,6 +184,8 @@ void TNode<K, E>::add(K keyItem, E item)
 		{
 			pRight = new TNode<K, E>();
 			pRight->data = item;
+			pRight->key = keyItem;
+
 		}
 		else
 		{
@@ -186,6 +199,8 @@ void TNode<K, E>::add(K keyItem, E item)
 		{
 			pLeft = new TNode<K, E>();
 			pLeft->data = item;
+			pLeft->key = keyItem;
+
 
 		}
 		else
@@ -196,6 +211,30 @@ void TNode<K, E>::add(K keyItem, E item)
 			
 	
 
+}
+template <typename K,typename E>
+void TNode<K,E>::setLeft(TNode<K,E>* l)
+{
+	this->pLeft = l;
+}
+template <typename K,typename E>
+void TNode<K,E>::setRight(TNode<K,E>* r)
+{
+	this->pRight = r;
+}
+template <typename K,typename E>
+int TNode<K,E>::count()
+{
+	int c = 1;
+	if (pLeft != nullptr)
+	{
+		c += pLeft->count();
+	}
+	if (pRight != nullptr)
+	{
+		c += pRight->count();
+	}
+	return c;
 }
 
 template <typename K,typename E>

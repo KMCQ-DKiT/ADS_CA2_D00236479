@@ -66,9 +66,9 @@ namespace NodeTesting
 		*/
 		TEST_METHOD(TestAddGreaterThanChildren)
 		{
-			TNode<int,int> node(4,4);
+			TNode<int,int> node(3,3);
 			node.add(6,6);
-			TNode<int,int> *pRight = node.getRight();
+			TNode<int,int>* pRight = node.getRight();
 			node.add(5,5);
 			node.add(7,7);
 			Assert::IsNotNull(pRight->getLeft());
@@ -77,5 +77,46 @@ namespace NodeTesting
 			Assert::AreEqual(7, pRight->getRight()->getItem());
 
 		}
+
+		TEST_METHOD(TestAddLessThanChildren)
+		{
+			TNode<int,int> node(4,4);
+			node.add(2,2);
+			TNode<int,int>* pLeft = node.getLeft();
+			node.add(1,1);
+			node.add(3,3);
+			Assert::IsNotNull(pLeft->getLeft());
+			Assert::AreEqual(1, pLeft->getLeft()->getItem());
+			Assert::IsNotNull(pLeft->getRight());
+			Assert::AreEqual(3, pLeft->getRight()->getItem());
+
+		}
+
+		TEST_METHOD(TestCount)
+		{
+			TNode<int,int> node(9,9);
+
+			node.add(8,8);
+			node.add(7, 7);
+			TNode<int,int>* pLeft = node.getLeft();
+			node.add(6,6);
+			node.add(11,11);
+			node.add(4,4);
+			node.add(10, 10);
+
+			Assert::AreEqual(7, node.count());
+
+		}
+
+
+		/*
+					4
+				   / \_____
+				  2		   6
+				 / \	  / \
+				1	3	 5   7
+					     
+						  
+		*/
 	};
 }
