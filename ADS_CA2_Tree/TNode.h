@@ -21,15 +21,17 @@ public:
 
 	TNode();
 	TNode(K,E);
+
 	void setItem(K keyItem, E item);
+
 	TNode<K,E>* getLeft();
 	TNode<K, E>* getRight();
 
+	void add(K keyItem, E item);
 
 
 
-
-	K getKey();
+	K getItem();
 
 
 
@@ -50,8 +52,9 @@ public:
 	}
 };
 template <typename K,typename E>
-K TNode<K,E>::getKey()
+K TNode<K,E>::getItem()
 {
+	return this->data;
 	return this->key;
 }
 
@@ -89,4 +92,108 @@ template <typename K, typename E>
 TNode<K, E>* TNode<K, E>::getRight()
 {
 	return this->pRight;
+}
+
+template <typename K,typename E>
+void TNode<K,E>::add(K keyItem, E item)
+{
+	//Checks for Duplicates
+	if (item == this->data && keyItem == this->key)
+	{
+		return;
+	}
+	// Checking if the data is the same but key is less than
+	else if(item == this -> data && keyItem < this->key){
+
+		if (pLeft == nullptr)
+		{
+			pLeft = new TNode<K,E>();
+			pLeft->data = item;
+			pLeft->key = keyItem;
+
+		}
+		else
+		{
+			pLeft->add(item);
+			pLeft->add(keyItem)
+
+		}
+
+	}
+	// Checking if the data is the same and key is greater than
+	else if (item == this->data && keyItem > this->key) {
+
+		if (pRight == nullptr)
+		{
+			pRight = new TNode<K, E>();
+			pRight->data = item;
+			pRight->key = keyItem;
+		}
+		else
+		{
+			pRight->add(item);
+			pRight->add(keyItem)
+		}
+	}
+	//Checking if data is Lower than and key is the same
+	else if (item < this->data && keyItem == this->key) {
+		if (pLeft == nullptr)
+		{
+			pLeft = new TNode<K, E>();
+			pLeft->data = item;
+			pLeft->key = keyItem;
+
+		}
+		else
+		{
+			pLeft->add(item);
+			pLeft->add(keyItem)
+		}
+
+	}
+	// Checking if data is higher than and key is the same
+	else if (item > this->data && keyItem == this->key) {
+		if (pRight == nullptr)
+		{
+			pRight = new TNode<K, E>();
+			pRight->data = item;
+		}
+		else
+		{
+			pRight->add(item);
+		}
+	}
+	//Checks if data and key is larger than
+	else if (item > this->data && keyItem > this->key) {
+		if (pRight == nullptr)
+		{
+			pRight = new TNode<K, E>();
+			pRight->data = item;
+			pRight->key = keyItem;
+		}
+		else
+		{
+			pRight->add(item);
+			pRight->add(keyItem)
+		}
+
+	}
+	//Checks if data and key is less than
+	else if (item < this->data && keyItem < this->key) {
+		if (pLeft == nullptr)
+		{
+			pLeft = new TNode<K, E>();
+			pLeft->data = item;
+			pLeft->key = keyItem;
+
+		}
+		else
+		{
+			pLeft->add(item);
+			pLeft->add(keyItem)
+		}
+	}
+	else {
+		return
+	}
 }

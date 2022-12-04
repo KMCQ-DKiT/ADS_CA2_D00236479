@@ -10,9 +10,9 @@ namespace BinaryTreeTest
 	{
 	public:
 		
-		TEST_METHOD(TestAddToEmptyTree)
+		/*TEST_METHOD(TestAddToEmptyTree)
 		{
 		
-		}
+		}*/
 	};
 }
