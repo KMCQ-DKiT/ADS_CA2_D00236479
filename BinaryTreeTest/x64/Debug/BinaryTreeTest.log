@@ -1,2 +1,4 @@
-﻿  BinaryTreeTest.cpp
-  BinaryTreeTest.vcxproj -> C:\Users\kylem\source\repos\ADS_CA2_Tree\x64\Debug\BinaryTreeTest.dll
+﻿  pch.cpp
+  BinaryTreeTest.cpp
+  LINK : C:\Users\kylem\Source\Repos\ADS_CA2_D00236479\x64\Debug\BinaryTreeTest.dll not found or not built by the last incremental link; performing full link
+  BinaryTreeTest.vcxproj -> C:\Users\kylem\Source\Repos\ADS_CA2_D00236479\x64\Debug\BinaryTreeTest.dll

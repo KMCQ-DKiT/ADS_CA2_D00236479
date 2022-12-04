@@ -77,7 +77,18 @@ namespace NodeTesting
 			Assert::AreEqual(7, pRight->getRight()->getItem());
 
 		}
-
+		/*
+		Test Add to add a node as a child. As this is
+		A Binary Search Tree, all items add should remain in order.
+		By Adding 2 to a node wiht a value of 4, the new node
+		should be on the left. If we then add two children 1 and 3
+		They should appear as follows
+				 4
+				/ \
+			   2
+			  / \
+			 1   3
+		*/
 		TEST_METHOD(TestAddLessThanChildren)
 		{
 			TNode<int,int> node(4,4);
@@ -91,7 +102,16 @@ namespace NodeTesting
 			Assert::AreEqual(3, pLeft->getRight()->getItem());
 
 		}
+		/*
+			Test the count method returns the correct value.
+			to test this we will use the following tree
+					4
+				   / \
+				  2   6
+				 / \ / \
+				1  3 5  7
 
+		*/
 		TEST_METHOD(TestCount)
 		{
 			TNode<int,int> node(9,9);
@@ -109,14 +129,6 @@ namespace NodeTesting
 		}
 
 
-		/*
-					4
-				   / \_____
-				  2		   6
-				 / \	  / \
-				1	3	 5   7
-					     
-						  
-		*/
+
 	};
 }
