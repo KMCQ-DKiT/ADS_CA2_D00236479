@@ -20,41 +20,51 @@ private:
 public:
 
 	TNode();
-	TNode(K,E);
+	TNode(K, E);
 
 	void setItem(K keyItem, E item);
 
-	TNode<K,E>* getLeft();
+	TNode<K, E>* getLeft();
 	TNode<K, E>* getRight();
 
 	void add(K keyItem, E item);
 
 
 
-	K getItem();
+	E getItem();
+
+	K getKey();
 
 
+	~TNode();
 
-	bool insert(K key, E data) {
-		return false;
-	}
-	void setKey(K key) {
-		this->key = key;
-	}
-	K getKey() const {
-		return this->key;
-	}
-	void setData(E data) {
-		this->data = data; 
-	}
-	E getData() const {
-		return this->data;
-	}
+
 };
+//template <typename K, typename E>
+//	bool insert(K key, E data) {
+//		return false;
+//	}
+//	template <typename K, typename E>
+//
+//	void setData(E data) {
+//		this->data = data; 
+//	}
+//	template <typename K, typename E>
+//	E getData() const {
+//		return this->data;
+//	}
+
 template <typename K,typename E>
-K TNode<K,E>::getItem()
+E TNode<K,E>::getItem()
 {
 	return this->data;
+	return this->key;
+
+}
+
+template <typename K, typename E>
+K TNode<K, E>::getKey()
+{
 	return this->key;
 }
 
@@ -95,7 +105,7 @@ TNode<K, E>* TNode<K, E>::getRight()
 }
 
 template <typename K,typename E>
-void TNode<K,E>::add(K keyItem, E item)
+void TNode<K, E>::add(K keyItem, E item)
 {
 	//Checks for Duplicates
 	if (item == this->data && keyItem == this->key)
@@ -103,19 +113,17 @@ void TNode<K,E>::add(K keyItem, E item)
 		return;
 	}
 	// Checking if the data is the same but key is less than
-	else if(item == this -> data && keyItem < this->key){
+	else if (item == this->data && keyItem < this->key) {
 
 		if (pLeft == nullptr)
 		{
-			pLeft = new TNode<K,E>();
+			pLeft = new TNode<K, E>();
 			pLeft->data = item;
-			pLeft->key = keyItem;
 
 		}
 		else
 		{
-			pLeft->add(item);
-			pLeft->add(keyItem)
+			pLeft->add(item,keyItem);
 
 		}
 
@@ -127,12 +135,10 @@ void TNode<K,E>::add(K keyItem, E item)
 		{
 			pRight = new TNode<K, E>();
 			pRight->data = item;
-			pRight->key = keyItem;
 		}
 		else
 		{
-			pRight->add(item);
-			pRight->add(keyItem)
+			pRight->add(item,keyItem);
 		}
 	}
 	//Checking if data is Lower than and key is the same
@@ -141,13 +147,11 @@ void TNode<K,E>::add(K keyItem, E item)
 		{
 			pLeft = new TNode<K, E>();
 			pLeft->data = item;
-			pLeft->key = keyItem;
 
 		}
 		else
 		{
-			pLeft->add(item);
-			pLeft->add(keyItem)
+			pLeft->add(item,keyItem);
 		}
 
 	}
@@ -160,7 +164,7 @@ void TNode<K,E>::add(K keyItem, E item)
 		}
 		else
 		{
-			pRight->add(item);
+			pRight->add(item,keyItem);
 		}
 	}
 	//Checks if data and key is larger than
@@ -169,12 +173,10 @@ void TNode<K,E>::add(K keyItem, E item)
 		{
 			pRight = new TNode<K, E>();
 			pRight->data = item;
-			pRight->key = keyItem;
 		}
 		else
 		{
-			pRight->add(item);
-			pRight->add(keyItem)
+			pRight->add(item,keyItem);
 		}
 
 	}
@@ -184,16 +186,21 @@ void TNode<K,E>::add(K keyItem, E item)
 		{
 			pLeft = new TNode<K, E>();
 			pLeft->data = item;
-			pLeft->key = keyItem;
 
 		}
 		else
 		{
-			pLeft->add(item);
-			pLeft->add(keyItem)
+			pLeft->add(item,keyItem);
 		}
 	}
-	else {
-		return
-	}
+			
+	
+
+}
+
+template <typename K,typename E>
+TNode<K,E>::~TNode()
+{
+	delete pLeft;
+	delete pRight;
 }
