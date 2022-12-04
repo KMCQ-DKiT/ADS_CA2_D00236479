@@ -7,6 +7,8 @@
 #include <string>
 #include <regex>
 using namespace std;
+template <typename K, typename E>
+
 
 /// <summary>
 /// Reads a row, splits into fields (using comma delimiter) and returns a vector of vectors
@@ -78,8 +80,3 @@ vector<string> splitString(string str, string delimiter)
 	return words;
 }
 
-template <typename K,typename E>
-void printBT(TNode<K, E>* node)
-{
-	printBT("", node, true);
-};

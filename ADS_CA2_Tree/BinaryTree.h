@@ -12,16 +12,3 @@ public:
 		return nullptr;
 	}
 };
-template <typename K,typename E>
-void BinaryTree<typename K,E>::add(K,E item)
-{
-    if (root == nullptr)
-    {
-        root = new TNode<K,E>();
-        root->setItem(item);
-    }
-    else
-    {
-        root->add(item);
-    }
-}

@@ -29,20 +29,6 @@ int main()
 	cout << endl << "demoCSVToObject()..........." << endl;
 	demoCSVToObject();
 
-	BinaryTree<int> tree;
-	for (int i = 1; i <= 15; i++)
-	{
-		tree.add(i);
-	}
-	printBT(tree.root);
-	tree.clear();
-	for (int i = 15; i >= 1; i--)
-	{
-		tree.add(i);
-	}
-	printBT(tree.root);
-	tree.clear();
-	tree.add(8);
 
 
 	return 0;

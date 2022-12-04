@@ -21,7 +21,10 @@ public:
 
 	TNode();
 	TNode(K,E);
-	void add(K,E item);
+	void setItem(K keyItem, E item);
+	TNode<K,E>* getLeft();
+	TNode<K, E>* getRight();
+
 
 
 
@@ -53,7 +56,7 @@ K TNode<K,E>::getKey()
 }
 
 template <typename K, typename E>
-TNode<typename K,typename E>::TNode()
+TNode<K, E>::TNode()
 {
 	pLeft = nullptr;
 	pRight = nullptr;
@@ -61,7 +64,7 @@ TNode<typename K,typename E>::TNode()
 
 
 template <typename K, typename E>
-TNode<typename K,typename E>::TNode(K key, E data)
+TNode<typename K, typename E>::TNode(K key, E data)
 {
 	pLeft = nullptr;
 	pRight = nullptr;
@@ -69,37 +72,21 @@ TNode<typename K,typename E>::TNode(K key, E data)
 	this->key = key;
 }
 
+
+
 template <typename K,typename E>
-void TNode<K,E>::add(K key, E data)
+void TNode<K,E>::setItem(K keyItem,E item)
 {
-	if (data == this->data && key == this->key)
-	{
-		return;
-	}
-	else if (item < this->data && key < this-> key)
-	{
-		if (left == nullptr)
-		{
-			left = new TNode<T>();
-			left->data = item;
-			left->parent = this;
-		}
-		else
-		{
-			left->add(item);
-		}
-	}
-	else
-	{
-		if (right == nullptr)
-		{
-			right = new BSTNode<T>();
-			right->data = item;
-			right->parent = this;
-		}
-		else
-		{
-			right->add(item);
-		}
-	}
+	this->data = item;
+	this->key = keyItem;
+}
+template <typename K,typename E>
+TNode<K,E>* TNode<K,E>::getLeft()
+{
+	return this->pLeft;
+}
+template <typename K, typename E>
+TNode<K, E>* TNode<K, E>::getRight()
+{
+	return this->pRight;
 }
