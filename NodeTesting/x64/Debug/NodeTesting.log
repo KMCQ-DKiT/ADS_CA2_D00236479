@@ -1,5 +1,2 @@
-﻿  pch.cpp
-  NodeTesting.cpp
-  LINK : C:\Users\kylem\Source\Repos\ADS_CA2_D00236479\x64\Debug\NodeTesting.dll not found or not built by the last incremental link; performing full link
-     Creating library C:\Users\kylem\Source\Repos\ADS_CA2_D00236479\x64\Debug\NodeTesting.lib and object C:\Users\kylem\Source\Repos\ADS_CA2_D00236479\x64\Debug\NodeTesting.exp
+﻿  NodeTesting.cpp
   NodeTesting.vcxproj -> C:\Users\kylem\Source\Repos\ADS_CA2_D00236479\x64\Debug\NodeTesting.dll
