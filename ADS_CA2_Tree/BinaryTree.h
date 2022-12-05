@@ -39,11 +39,15 @@ void BinaryTree<K,E>::add(K keyItem,E item)
     if (root == nullptr)
     {
         root = new TNode<K,E>();
-        root->setItem(item,keyItem);
+		root->setKeyItem(keyItem);
+        root->setItem(item);
+		
     }
     else
-    {
-        root->add(item,keyItem);
+    {	
+		root->add(keyItem,item);
+        
+		
     }
 }
 

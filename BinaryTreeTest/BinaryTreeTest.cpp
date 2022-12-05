@@ -1,6 +1,8 @@
 #include "pch.h"
 #include "CppUnitTest.h"
 #include "../ADS_CA2_Tree/BinaryTree.h"
+#include <iostream>
+
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
@@ -15,19 +17,20 @@ namespace BinaryTreeTest
 			BinaryTree<int,int> tree;
 			tree.add(1,2);
 			Assert::IsNotNull(tree.root);
-			Assert::AreEqual(1, tree.root->getItem());
+
+			Assert::AreEqual(2, tree.root->getItem());
 		}
 
 		TEST_METHOD(TestAddToRootLeft)
 		{
 			BinaryTree<int,int> tree;
-			tree.add(2,2);
-			tree.add(1,1);
+			tree.add(3,5);
+			tree.add(1,2);
 			Assert::IsNotNull(tree.root);
-			Assert::AreEqual(2, tree.root->getItem());
+			Assert::AreEqual(5, tree.root->getItem());
 			TNode<int,int>* pLeft = tree.root->getLeft();
 			Assert::IsNotNull(pLeft);
-			Assert::AreEqual(1, pLeft->getItem());
+			Assert::AreEqual(2, pLeft->getItem());
 		}
 		TEST_METHOD(TestAddToRootRight)
 		{

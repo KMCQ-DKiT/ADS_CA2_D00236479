@@ -1,31 +1,3 @@
 ﻿  BinaryTreeTest.cpp
-C:\Users\kylem\source\repos\ADS_CA2_D00236479\ADS_CA2_Tree\BinaryTree.h(114,13): error C2660: 'TNode<K,E>::setItem': function does not take 1 arguments
-          with
-          [
-              K=int,
-              E=int
-          ]
-C:\Users\kylem\source\repos\ADS_CA2_D00236479\ADS_CA2_Tree\TNode.h(25,7): message : see declaration of 'TNode<K,E>::setItem'
-          with
-          [
-              K=int,
-              E=int
-          ]
-C:\Users\kylem\source\repos\ADS_CA2_D00236479\ADS_CA2_Tree\BinaryTree.h(114,13): message : while trying to match the argument list '(E)'
-          with
-          [
-              E=int
-          ]
-C:\Users\kylem\source\repos\ADS_CA2_D00236479\ADS_CA2_Tree\BinaryTree.h(52,1): message : while compiling class template member function 'bool BinaryTree<int,int>::remove(K,E)'
-          with
-          [
-              K=int,
-              E=int
-          ]
-C:\Users\kylem\source\repos\ADS_CA2_D00236479\BinaryTreeTest\BinaryTreeTest.cpp(68,15): message : see reference to function template instantiation 'bool BinaryTree<int,int>::remove(K,E)' being compiled
-          with
-          [
-              K=int,
-              E=int
-          ]
-C:\Users\kylem\source\repos\ADS_CA2_D00236479\BinaryTreeTest\BinaryTreeTest.cpp(15,1): message : see reference to class template instantiation 'BinaryTree<int,int>' being compiled
+C:\Users\kylem\source\repos\ADS_CA2_D00236479\ADS_CA2_Tree\BinaryTree.h(128): warning C4715: 'BinaryTree<int,int>::remove': not all control paths return a value
+  BinaryTreeTest.vcxproj -> C:\Users\kylem\Source\Repos\ADS_CA2_D00236479\x64\Debug\BinaryTreeTest.dll

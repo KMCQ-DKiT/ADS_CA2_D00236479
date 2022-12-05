@@ -22,7 +22,13 @@ public:
 	TNode();
 	TNode(K, E);
 
-	void setItem(K keyItem, E item);
+	/*void setKeyItem(K keyItem, E item);*/
+
+	void setKeyItem(K keyItem);
+
+	/*void setItem(K keyItem, E item);*/
+
+	void setItem(E item);
 
 	TNode<K, E>* getLeft();
 	TNode<K, E>* getRight();
@@ -88,13 +94,17 @@ TNode<typename K, typename E>::TNode(K key, E data)
 	this->key = key;
 }
 
+template <typename K, typename E>
+void TNode<K, E>::setKeyItem(K keyItem)
+{
 
+	this->key = keyItem;
+}
 
 template <typename K,typename E>
-void TNode<K,E>::setItem(K keyItem,E item)
+void TNode<K,E>::setItem(E item)
 {
 	this->data = item;
-	this->key = keyItem;
 }
 template <typename K,typename E>
 TNode<K,E>* TNode<K,E>::getLeft()
