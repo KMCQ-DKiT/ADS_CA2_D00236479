@@ -1,3 +1,4 @@
 ﻿  BinaryTreeTest.cpp
-C:\Users\kylem\source\repos\ADS_CA2_D00236479\ADS_CA2_Tree\BinaryTree.h(128): warning C4715: 'BinaryTree<int,int>::remove': not all control paths return a value
-  BinaryTreeTest.vcxproj -> C:\Users\kylem\Source\Repos\ADS_CA2_D00236479\x64\Debug\BinaryTreeTest.dll
+C:\Users\kylem\source\repos\ADS_CA2_D00236479\ADS_CA2_Tree\BinaryTree.h(136): warning C4715: 'BinaryTree<int,int>::remove': not all control paths return a value
+     Creating library C:\Users\kylem\source\repos\ADS_CA2_D00236479\x64\Debug\BinaryTreeTest.lib and object C:\Users\kylem\source\repos\ADS_CA2_D00236479\x64\Debug\BinaryTreeTest.exp
+  BinaryTreeTest.vcxproj -> C:\Users\kylem\source\repos\ADS_CA2_D00236479\x64\Debug\BinaryTreeTest.dll
