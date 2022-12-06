@@ -16,10 +16,12 @@ public:
 	BinaryTree();
 	void add(K keyItem, E item);
 	bool remove(K keyItem, E item);
+	
+	int Depth(K keyItem);
+
 	bool search(K keyItem);
 
 	void clear();
-
 	int count();
 
 	void printInOrder();
@@ -67,6 +69,77 @@ public:
 //};
 };
 
+//template <typename K, typename E>
+//int BinaryTree<K, E>::depth()
+//{
+//	if (root == NULL)
+//		return 0;
+//
+//	// Get the depth of the left and right subtree 
+//	// using recursion.
+//	int leftDepth = depth(root->pLeft);
+//	int rightDepth = depth(root->pRight();
+//
+//	// Choose the larger one and add the root to it.
+//	if (leftDepth > rightDepth)
+//		return leftDepth + 1;
+//	else
+//		return rightDepth + 1;
+//}
+
+//template <typename K, typename E>
+//void BinaryTree<K, E>::findDepth(TNode<K, E>* root)
+//{
+//	// Base case
+//		// Root being null means tree doesn't exist.
+//		if (root == NULL)
+//			return 0;
+//
+//		// Get the depth of the left and right subtree 
+//		// using recursion.
+//		int leftDepth = maxDepth(root->left);
+//		int rightDepth = maxDepth(root->right);
+//
+//		// Choose the larger one and add the root to it.
+//		if (leftDepth > rightDepth)
+//			return leftDepth + 1;
+//		else
+//			return rightDepth + 1;
+//}
+
+
+
+
+template <typename K, typename E>
+int BinaryTree<K, E>::Depth(K keyItem) {
+
+	TNode<K, E>* toBeSearched = root;
+	bool found = false;
+	int DepthCounter = 0;
+
+	while (!found && toBeSearched != nullptr) {
+
+		DepthCounter++;
+
+		if (toBeSearched->getKey() == keyItem) {
+			found = true;
+			return DepthCounter;
+
+		}
+		else {
+
+			if (toBeSearched->getKey() > keyItem) {
+				toBeSearched = toBeSearched->getLeft();
+			}
+			else {
+				toBeSearched = toBeSearched->getRight();
+			}
+		}
+	}
+	if (!found)
+		return 0;
+
+}
 
 template <typename K, typename E>
 bool BinaryTree<K, E>::search(K keyItem)
