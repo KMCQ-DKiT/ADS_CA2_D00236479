@@ -6,36 +6,103 @@
 template <typename K, typename E>
 class BinaryTree
 {
-	void addItemToArray(TNode<K,E>* node, int& pos, int* arr);
+	void addItemToArray(TNode<K, E>* node, int& pos, int* arr);
 
 
 public:
 
 
-	TNode<K,E> *root;
+	TNode<K, E>* root;
 	BinaryTree();
-    void add(K keyItem, E item);
-    bool remove(K keyItem, E item);
+	void add(K keyItem, E item);
+	bool remove(K keyItem, E item);
+	bool search(K keyItem);
+
 	void clear();
 
 	int count();
 
 	void printInOrder();
-	void printInOrder(TNode<K,E>* node);
+	void printInOrder(TNode<K, E>* node);
 
 
 	void printPreOrder();
-	void printPreOrder(TNode<K,E>* node);
+	void printPreOrder(TNode<K, E>* node);
 
 	void printPostOrder();
-	void printPostOrder(TNode<K,E>* node);
+	void printPostOrder(TNode<K, E>* node);
+	E* toArray();
+	~BinaryTree();
 
-
-	E* search(K key) {
-		return nullptr;
-	}
-	
+	//template <typename K, typename E>
+//
+//	E* search(K key)
+//	{
+//		TNode<K, E>* toBeFound = root;
+//		bool found = false;
+//
+//		while (!found && toBeFound != nullptr)
+//		{
+//			if (toBeFound->getItem() == item)
+//			{
+//				found = true;
+//				return toBeFound;
+//			}
+//			else
+//			{
+//				if (toBeFound->getItem() > item)
+//				{
+//					toBeFound = toBeFound->getLeft();
+//				}
+//				else
+//				{
+//					toBeFound = toBeFound->getRight();
+//				}
+//			}
+//		}
+//		if (!found)
+//			return nullptr;
+//	}
+//	
+//};
 };
+
+
+template <typename K, typename E>
+bool BinaryTree<K, E>::search(K keyItem)
+{
+	TNode<K, E>* toBeSearched = root;
+	bool found = false;
+
+	while (!found && toBeSearched != nullptr)
+	{
+		//This is Searching for Finding
+		if (toBeSearched->getKey() == keyItem)
+		{
+
+			found = true;
+		}
+		else
+		{
+			if (toBeSearched->getKey() > keyItem)
+			{
+				toBeSearched = toBeSearched->getLeft();
+			}
+			else
+			{
+				toBeSearched = toBeSearched->getRight();
+			}
+		}
+	}
+	if (!found)
+		return false;
+
+		//This Defines Finding
+
+
+}
+
+
 template <typename K, typename E>
 BinaryTree<K,E>::BinaryTree()
 {
@@ -134,6 +201,23 @@ bool BinaryTree<K,E>::remove(K keyItem, E item)
 	}
 
 }
+
+template <typename K,typename E>
+E* BinaryTree<K,E>::toArray()
+{
+	E* arr = new E[root->count()];
+	int pos = 0;
+	addItemToArray(root, pos, arr);
+	return arr;
+}
+
+
+template <typename K,typename E>
+BinaryTree<K,E>::~BinaryTree()
+{
+	delete root;
+}
+
 
 template <typename K,typename E>
 void BinaryTree<K,E>::clear()

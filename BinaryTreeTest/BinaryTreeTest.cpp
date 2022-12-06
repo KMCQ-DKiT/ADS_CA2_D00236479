@@ -180,5 +180,22 @@ namespace BinaryTreeTest
 			Assert::IsNull(tree.root->getRight()->getRight()->getLeft());
 		}
 
+		TEST_METHOD(Search)
+		{
+			BinaryTree<int, int> tree;
+			tree.add(4, 4);
+			tree.add(2, 2);
+			tree.add(6, 6);
+			tree.add(1, 1);
+			tree.add(3, 3);
+			tree.add(5, 5);
+			tree.add(7, 7);
+			tree.search(7);
+			Assert::IsTrue(tree.search(7));
+
+
+	
+		}
+
 	};
 }
