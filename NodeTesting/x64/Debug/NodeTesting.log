@@ -1,2 +1,4 @@
-﻿  NodeTesting.cpp
-  NodeTesting.vcxproj -> C:\Users\kylem\Source\Repos\ADS_CA2_D00236479\x64\Debug\NodeTesting.dll
+﻿  pch.cpp
+  NodeTesting.cpp
+     Creating library C:\Users\kylem\source\repos\ADS_CA2_D00236479\x64\Debug\NodeTesting.lib and object C:\Users\kylem\source\repos\ADS_CA2_D00236479\x64\Debug\NodeTesting.exp
+  NodeTesting.vcxproj -> C:\Users\kylem\source\repos\ADS_CA2_D00236479\x64\Debug\NodeTesting.dll

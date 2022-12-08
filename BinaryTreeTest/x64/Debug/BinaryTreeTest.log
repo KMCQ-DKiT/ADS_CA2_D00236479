@@ -1,6 +1,33 @@
-﻿  BinaryTreeTest.cpp
-C:\Users\kylem\source\repos\ADS_CA2_D00236479\ADS_CA2_Tree\BinaryTree.h(176): warning C4715: 'BinaryTree<int,int>::search': not all control paths return a value
-C:\Users\kylem\source\repos\ADS_CA2_D00236479\ADS_CA2_Tree\BinaryTree.h(142): warning C4715: 'BinaryTree<int,int>::Depth': not all control paths return a value
-C:\Users\kylem\source\repos\ADS_CA2_D00236479\ADS_CA2_Tree\BinaryTree.h(276): warning C4715: 'BinaryTree<int,int>::remove': not all control paths return a value
-     Creating library C:\Users\kylem\source\repos\ADS_CA2_D00236479\x64\Debug\BinaryTreeTest.lib and object C:\Users\kylem\source\repos\ADS_CA2_D00236479\x64\Debug\BinaryTreeTest.exp
-  BinaryTreeTest.vcxproj -> C:\Users\kylem\source\repos\ADS_CA2_D00236479\x64\Debug\BinaryTreeTest.dll
+﻿  pch.cpp
+  BinaryTreeTest.cpp
+C:\Users\kylem\source\repos\ADS_CA2_D00236479\ADS_CA2_Tree\BinaryTree.h(123,20): error C3861: 'max': identifier not found
+C:\Users\kylem\source\repos\ADS_CA2_D00236479\ADS_CA2_Tree\BinaryTree.h(115,1): message : while compiling class template member function 'int BinaryTree<int,int>::maxValue(TNode<K,E> *)'
+          with
+          [
+              K=int,
+              E=int
+          ]
+C:\Users\kylem\source\repos\ADS_CA2_D00236479\ADS_CA2_Tree\BinaryTree.h(149,3): message : see reference to function template instantiation 'int BinaryTree<int,int>::maxValue(TNode<K,E> *)' being compiled
+          with
+          [
+              K=int,
+              E=int
+          ]
+C:\Users\kylem\source\repos\ADS_CA2_D00236479\ADS_CA2_Tree\BinaryTree.h(308,1): message : while compiling class template member function 'BinaryTree<int,int>::BinaryTree(void)'
+C:\Users\kylem\source\repos\ADS_CA2_D00236479\BinaryTreeTest\BinaryTreeTest.cpp(16,24): message : see reference to function template instantiation 'BinaryTree<int,int>::BinaryTree(void)' being compiled
+C:\Users\kylem\source\repos\ADS_CA2_D00236479\BinaryTreeTest\BinaryTreeTest.cpp(16,1): message : see reference to class template instantiation 'BinaryTree<int,int>' being compiled
+C:\Users\kylem\source\repos\ADS_CA2_D00236479\ADS_CA2_Tree\BinaryTree.h(123,9): error C3861: 'max': identifier not found
+C:\Users\kylem\source\repos\ADS_CA2_D00236479\ADS_CA2_Tree\BinaryTree.h(138,20): error C3861: 'min': identifier not found
+C:\Users\kylem\source\repos\ADS_CA2_D00236479\ADS_CA2_Tree\BinaryTree.h(130,1): message : while compiling class template member function 'int BinaryTree<int,int>::minValue(TNode<K,E> *)'
+          with
+          [
+              K=int,
+              E=int
+          ]
+C:\Users\kylem\source\repos\ADS_CA2_D00236479\ADS_CA2_Tree\BinaryTree.h(156,3): message : see reference to function template instantiation 'int BinaryTree<int,int>::minValue(TNode<K,E> *)' being compiled
+          with
+          [
+              K=int,
+              E=int
+          ]
+C:\Users\kylem\source\repos\ADS_CA2_D00236479\ADS_CA2_Tree\BinaryTree.h(138,9): error C3861: 'min': identifier not found
