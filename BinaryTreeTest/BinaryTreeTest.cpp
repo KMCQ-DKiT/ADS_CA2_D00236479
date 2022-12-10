@@ -218,7 +218,7 @@ namespace BinaryTreeTest
 			tree.add(3, 3);
 			tree.add(5, 5);
 			tree.add(7, 7);
-			Assert::AreEqual(3, tree.Depth(3));
+			Assert::AreEqual(2, tree.Depth(3));
 
 		}
 
@@ -233,7 +233,8 @@ namespace BinaryTreeTest
 			tree.add(3, 3);
 			tree.add(5, 5);
 			tree.add(7, 7);
-			Assert::AreEqual(3, tree.Height(3));
+			tree.add(8, 8);
+			Assert::AreEqual(2, tree.Height(6));
 		}
 		TEST_METHOD(SubTree)
 		{
@@ -245,8 +246,8 @@ namespace BinaryTreeTest
 			tree.add(3, 3);
 			tree.add(5, 5);
 			tree.add(7, 7);
-			tree.isBST(tree.root);
-			Assert::AreEqual(3, tree.isBST(tree.root));
+			tree.subTree(tree.root->getLeft());
+			Assert::IsTrue(tree.root->getLeft());
 		}
 
 

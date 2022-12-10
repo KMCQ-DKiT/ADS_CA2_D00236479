@@ -16,15 +16,17 @@ public:
 	BinaryTree();
 	void add(K keyItem, E item);
 	bool remove(K keyItem, E item);
-	int Height(K keyItem);
 	int Depth(K keyItem);
 	bool search(K keyItem);
-	int maxValue(TNode<K, E>* node);
+	/*int maxValue(TNode<K, E>* node);
 	int minValue(TNode<K, E>* node);
 	int isBST(TNode<K, E>* node);
-	int SubTree(K keyItem);
+	int SubTree(K keyItem);*/
+	int Height(K keyItem);
 	void clear();
 	int count();
+	BinaryTree<K, E> BinaryTree<K, E>::subTree(TNode<K, E>* node);
+
 
 	void printInOrder();
 	void printInOrder(TNode<K, E>* node);
@@ -109,131 +111,136 @@ public:
 //			return rightDepth + 1;
 //}
 
-
-template <typename K, typename E>
-int BinaryTree<K, E>::maxValue(TNode<K, E>* node)
-{
-	if (node == NULL) {
-		return INT16_MIN;
-	}
-	int value = node->getItem();
-	int leftMax = maxValue(node->getLeft());
-	int rightMax = maxValue(node->getRight());
-
-	return max(value, max(leftMax, rightMax));
-}
-
-
-
-template <typename K, typename E>
-int BinaryTree<K, E>::minValue(TNode<K, E>* node)
-{
-	if (node == NULL) {
-		return INT16_MAX;
-	}
-	int value = node->getItem();
-	int leftMax = minValue(node->getLeft());
-	int rightMax = minValue(node->getRight());
-
-	return min(value, min(leftMax, rightMax));
-}
-
-
-template <typename K, typename E>
-int BinaryTree<K, E>::isBST(TNode<K, E>* node)
-{
-	if(node == NULL) {
-		return 1;
-
-		/* false if the max of the left is > than us */
-		if(node->getLeft() != NULL
-			&& maxValue(node->getLeft()) > node->getItem()) {
-			return 0;
-		}
-
-
-		/* false if the min of the right is <= than us */
-		if(node->getRight() != NULL
-			&& minValue(node->getLeft()) < node->getItem()) {
-			return 0;
-		}
-
-
-		/* false if, recursively, the left or right is not a BST
-		 */
-		/*if(!isBST(node->getLeft()) || !isBST(node->getRight()) {
-			return 0;
-		}*/
-
-	}
-	/* passing all that, it's a BST */
-	return 1;
-}
-
-
-
-template <typename K, typename E>
-int BinaryTree<K, E>::SubTree(K keyItem) {
-
-	TNode<K, E>* toBeSearched = root;
-	bool found = false;
-	int HeightCounter = 0;
-
-	while (!found && toBeSearched != nullptr) {
-
-			//Finds Null
-
-		if (toBeSearched->getKey() == keyItem) {
-			found = true;
-			//Finds Node, Finds Value
-
-		}
-		else {
-
-			if (toBeSearched->getKey() > keyItem) {
-				toBeSearched = toBeSearched->getLeft();
-				//Gets Left Node
-			}
-			else {
-				toBeSearched = toBeSearched->getRight();
-				//Gets Right Node
-			}
-		}
-	}
-	if (!found)
-		return 0;
-
-}
+//
+//template <typename K, typename E>
+//int BinaryTree<K, E>::maxValue(TNode<K, E>* node)
+//{
+//	if (node == NULL) {
+//		return INT16_MIN;
+//	}
+//	int value = node->getItem();
+//	int leftMax = maxValue(node->getLeft());
+//	int rightMax = maxValue(node->getRight());
+//
+//	return max(value, max(leftMax, rightMax));
+//}
+//
+//
+//
+//template <typename K, typename E>
+//int BinaryTree<K, E>::minValue(TNode<K, E>* node)
+//{
+//	if (node == NULL) {
+//		return INT16_MAX;
+//	}
+//	int value = node->getItem();
+//	int leftMax = minValue(node->getLeft());
+//	int rightMax = minValue(node->getRight());
+//
+//	return min(value, min(leftMax, rightMax));
+//}
+//
+//
+//template <typename K, typename E>
+//int BinaryTree<K, E>::isBST(TNode<K, E>* node)
+//{
+//	if(node == NULL) {
+//		return 1;
+//
+//		/* false if the max of the left is > than us */
+//		if(node->getLeft() != NULL
+//			&& maxValue(node->getLeft()) > node->getItem()) {
+//			return 0;
+//		}
+//
+//
+//		/* false if the min of the right is <= than us */
+//		if(node->getRight() != NULL
+//			&& minValue(node->getLeft()) < node->getItem()) {
+//			return 0;
+//		}
+//
+//
+//		/* false if, recursively, the left or right is not a BST
+//		 */
+//		/*if(!isBST(node->getLeft()) || !isBST(node->getRight()) {
+//			return 0;
+//		}*/
+//
+//	}
+//	/* passing all that, it's a BST */
+//	return 1;
+//}
+//
+//
+//
+//template <typename K, typename E>
+//int BinaryTree<K, E>::SubTree(K keyItem) {
+//
+//	TNode<K, E>* toBeSearched = root;
+//	bool found = false;
+//	int HeightCounter = 0;
+//
+//	while (!found && toBeSearched != nullptr) {
+//
+//			//Finds Null
+//
+//		if (toBeSearched->getKey() == keyItem) {
+//			found = true;
+//			//Finds Node, Finds Value
+//
+//		}
+//		else {
+//
+//			if (toBeSearched->getKey() > keyItem) {
+//				toBeSearched = toBeSearched->getLeft();
+//				//Gets Left Node
+//			}
+//			else {
+//				toBeSearched = toBeSearched->getRight();
+//				//Gets Right Node
+//			}
+//		}
+//	}
+//	if (!found)
+//		return 0;
+//
+//}
 
 template <typename K, typename E>
 int BinaryTree<K, E>::Height(K keyItem) {
 
 	TNode<K, E>* toBeSearched = root;
 	bool found = false;
-	int HeightCounter = 0;
+	int DepthCounter = 0;
 
 	while (!found && toBeSearched != nullptr) {
 
-		HeightCounter++;
+		DepthCounter++;
 
 		if (toBeSearched->getKey() == keyItem) {
 			found = true;
-			return HeightCounter;
+
+
+			return DepthCounter;
 
 		}
 		else {
 
 			if (toBeSearched->getKey() > keyItem) {
 				toBeSearched = toBeSearched->getLeft();
+
 			}
 			else {
 				toBeSearched = toBeSearched->getRight();
+		
+				
+
 			}
 		}
 	}
 	if (!found)
 		return 0;
-
 }
 
 
@@ -432,6 +439,18 @@ int BinaryTree<K,E>::count()
 	if (root == nullptr)
 		return 0;
 	return root->count();
+}
+
+template<typename K, typename E>
+inline BinaryTree<K,E> BinaryTree<K, E>::subTree(TNode<K, E>* node)
+{       
+	BinaryTree<typename, typename> tree;
+	if (node == nullptr) {
+		tree.root = node;
+	}
+
+
+	return BinaryTree();
 }
 
 template<typename K,typename E>
