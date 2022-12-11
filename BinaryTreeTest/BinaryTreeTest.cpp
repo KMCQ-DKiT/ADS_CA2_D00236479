@@ -217,7 +217,7 @@ namespace BinaryTreeTest
 			root->setLeft(new TNode<int, int>(4, 4));
 			root->setRight(new TNode<int, int>(15, 15));
 			root->getLeft()->setLeft(new TNode<int, int>(3, 3));
-			root->getLeft()->setRight(new TNode<int, int>(16, 16));
+			root->getLeft()->setRight(new TNode<int, int>(14, 14));
 			root->getLeft()->getLeft()->setLeft(new TNode<int, int>(2, 2));
 			root->getLeft()->getRight()->setRight(new TNode<int, int>(17, 17));
 			TNode<int, int>* new_root = tree.SubTree(root, 15);
@@ -253,7 +253,6 @@ namespace BinaryTreeTest
 		}
 		TEST_METHOD(TestfindBalance)
 		{
-			// Test with empty tree
 			BinaryTree<int, int> tree;
 			TNode<int, int>* root = tree.root;
 			tree.add(8, 8);
@@ -268,9 +267,6 @@ namespace BinaryTreeTest
 			Assert::AreEqual(1, tree.Balance(root));
 
 		};
-
-
-		//Pass in to check if is true to equal 7
 
 	};
 }

@@ -48,31 +48,30 @@ int main()
 	//return 0;
 }
 
-//template<typename K, typename E>
-//void Input()
-//{
-//	
-//	BinaryTree<KeyData, Data> tree;
-//	string fileName = "data/data_1000.csv";
-//	vector<vector<string>> allData = readDelimitedRows(fileName);
-//
-//
-//	for (vector<string> row : allData)
-//	{
-//		for (int i = 0; i <= 5; i++) {
-//
-//			/*KeyData Gkey = new KeyData(row[0], row[2], row[6]);
-//			Data Gdata = new Data(row[0], row[1], row[2], row[3], row[4], row[5], row[6], row[7], row[8], row[9], row[10], row[11], row[12], row[13], row[14]);*/
-//		
-//			tree.add(Car(row[0],[1]));
-//
-//			//cout << Gkey << Gdata << "test" << endl;
-//
-//			/*tree.printInOrder(KeyData(row[0], row[2], row[6]), Data(row[0], row[1], row[2], row[3], row[4], row[5], row[6], row[7], row[8], row[9], row[10], row[11], row[12], row[13], row[14]));*/
-//			cout << "Hello" << endl;
-//		}
-//	}
-//}
+template<typename K, typename E>
+void Input()
+{
+	
+	BinaryTree<KeyData, Data> tree;
+	string fileName = "data/data_1000.csv";
+	vector<vector<string>> allData = readDelimitedRows(fileName);
+
+
+	for (vector<string> row : allData)
+	{
+		for (int i = 0; i <= 5; i++) {
+
+			/*KeyData SKey = new KeyData(row[0], row[2], row[6]);
+			Data SData = new Data(row[0], row[1], row[2], row[3], row[4], row[5], row[6], row[7], row[8], row[9], row[10], row[11], row[12], row[13], row[14]);*/
+		
+			tree.add(Car(row[0],[1]));
+
+
+			/*tree.printInOrder(KeyData(row[0], row[2], row[6]), Data(row[0], row[1], row[2], row[3], row[4], row[5], row[6], row[7], row[8], row[9], row[10], row[11], row[12], row[13], row[14]));*/
+			cout << "Hello" << endl;
+		}
+	}
+}
 
 void PrintDataKey()
 {
@@ -91,7 +90,7 @@ void PrintDataKey()
 
 			cout << row[0] << ", " << row[2] << ", " << row[6] << endl;
 
-			cout << "--------------------------------------------------------------------" << endl;
+			
 		}
 	}
 }
@@ -111,7 +110,7 @@ void PrintData()
             cout << row[0] << ", " << row[1] << ", " << row[2] << row[3] << ", " << row[4] << ", " << row[5] << ", " << row[6] << ", " << row[7] << ", " << row[8]
                 << ", " << row[9] << ", " << row[10] << ", " << row[11] << ", " << row[12] << ", " << row[13] << ", " << row[14] << ", " << endl;
 
-            cout << "----------------------------------------------------------------------------------------------------------------------------------------------------------------------" << endl;
+           
         }
     }
 }
