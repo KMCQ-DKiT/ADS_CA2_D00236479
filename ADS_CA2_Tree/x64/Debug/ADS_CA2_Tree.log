@@ -1,13 +1,7 @@
 ﻿  ADS_CA2_Tree.cpp
-C:\Users\kylem\source\repos\ADS_CA2_D00236479\ADS_CA2_Tree\BinaryTree.h(28,37): error C4596: 'subTree': illegal qualified name in member declaration
-C:\Users\kylem\source\repos\ADS_CA2_D00236479\ADS_CA2_Tree\BinaryTree.h(74,2): message : see reference to class template instantiation 'BinaryTree<K,E>' being compiled
-C:\Users\kylem\source\repos\ADS_CA2_D00236479\ADS_CA2_Tree\BinaryTree.h(447,21): error C2760: syntax error: ',' was unexpected here; expected 'id-expression'
-C:\Users\kylem\source\repos\ADS_CA2_D00236479\ADS_CA2_Tree\BinaryTree.h(447,21): error C2760: syntax error: 'newline' was unexpected here; expected 'id-expression'
-C:\Users\kylem\source\repos\ADS_CA2_D00236479\ADS_CA2_Tree\BinaryTree.h(447,31): error C2760: syntax error: '>' was unexpected here; expected 'id-expression'
-C:\Users\kylem\source\repos\ADS_CA2_D00236479\ADS_CA2_Tree\BinaryTree.h(447,31): error C2760: syntax error: 'newline' was unexpected here; expected 'id-expression'
-C:\Users\kylem\source\repos\ADS_CA2_D00236479\ADS_CA2_Tree\BinaryTree.h(447,33): error C2065: 'tree': undeclared identifier
-C:\Users\kylem\source\repos\ADS_CA2_D00236479\ADS_CA2_Tree\BinaryTree.h(449,3): error C2065: 'tree': undeclared identifier
-C:\Users\kylem\source\repos\ADS_CA2_D00236479\ADS_CA2_Tree\ADS_CA2_Tree.cpp(97,35): error C2672: 'readDelimitedRows': no matching overloaded function found
-C:\Users\kylem\source\repos\ADS_CA2_D00236479\ADS_CA2_Tree\Utilities.h(18,24): message : could be 'std::vector<std::vector<std::string,std::allocator<std::string>>,std::allocator<std::vector<std::string,std::allocator<std::string>>>> readDelimitedRows(std::string)'
-C:\Users\kylem\source\repos\ADS_CA2_D00236479\ADS_CA2_Tree\ADS_CA2_Tree.cpp(97,61): message : 'std::vector<std::vector<std::string,std::allocator<std::string>>,std::allocator<std::vector<std::string,std::allocator<std::string>>>> readDelimitedRows(std::string)': could not deduce template argument for 'K'
-C:\Users\kylem\source\repos\ADS_CA2_D00236479\ADS_CA2_Tree\ADS_CA2_Tree.cpp(97,61): message : 'std::vector<std::vector<std::string,std::allocator<std::string>>,std::allocator<std::vector<std::string,std::allocator<std::string>>>> readDelimitedRows(std::string)': could not deduce template argument for 'E'
+C:\Users\kylem\source\repos\ADS_CA2_D00236479v2\ADS_CA2_Tree\Utilities.h(102,69): warning C4267: 'argument': conversion from 'size_t' to '_Ty', possible loss of data
+          with
+          [
+              _Ty=int
+          ]
+  ADS_CA2_Tree.vcxproj -> C:\Users\kylem\source\repos\ADS_CA2_D00236479v2\x64\Debug\ADS_CA2_Tree.exe

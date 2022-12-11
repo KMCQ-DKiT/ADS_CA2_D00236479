@@ -50,19 +50,6 @@ public:
 
 
 };
-//template <typename K, typename E>
-//	bool insert(K key, E data) {
-//		return false;
-//	}
-//	template <typename K, typename E>
-//
-//	void setData(E data) {
-//		this->data = data; 
-//	}
-//	template <typename K, typename E>
-//	E getData() const {
-//		return this->data;
-//	}
 
 template <typename K,typename E>
 E TNode<K,E>::getItem()

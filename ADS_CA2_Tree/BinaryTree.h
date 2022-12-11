@@ -1,246 +1,49 @@
 #pragma once
 #include "TNode.h"
-//if E == Student (email, dob, address, id,...)
-//then K = Key(email, dob, address)
-
+#include<iostream>
+#include <math.h>
+#include <algorithm>
+using namespace std;
 template <typename K, typename E>
 class BinaryTree
 {
-	void addItemToArray(TNode<K, E>* node, int& pos, int* arr);
-
-
 public:
-
-
 	TNode<K, E>* root;
 	BinaryTree();
 	void add(K keyItem, E item);
 	bool remove(K keyItem, E item);
 	int Depth(K keyItem);
-	bool search(K keyItem);
-	/*int maxValue(TNode<K, E>* node);
-	int minValue(TNode<K, E>* node);
-	int isBST(TNode<K, E>* node);
-	int SubTree(K keyItem);*/
-	int Height(K keyItem);
+	int search(K keyItem);
+	int Balance(TNode<K, E>* root);
+	int Height(TNode<K, E>* root);	
 	void clear();
 	int count();
-	BinaryTree<K, E> BinaryTree<K, E>::subTree(TNode<K, E>* node);
-
-
+	TNode<K, E>* SubTree(TNode<K, E>* root, K keyItem);
 	void printInOrder();
 	void printInOrder(TNode<K, E>* node);
-
-
 	void printPreOrder();
 	void printPreOrder(TNode<K, E>* node);
-
 	void printPostOrder();
 	void printPostOrder(TNode<K, E>* node);
-	E* toArray();
 	~BinaryTree();
 
-	//template <typename K, typename E>
-//
-//	E* search(K key)
-//	{
-//		TNode<K, E>* toBeFound = root;
-//		bool found = false;
-//
-//		while (!found && toBeFound != nullptr)
-//		{
-//			if (toBeFound->getItem() == item)
-//			{
-//				found = true;
-//				return toBeFound;
-//			}
-//			else
-//			{
-//				if (toBeFound->getItem() > item)
-//				{
-//					toBeFound = toBeFound->getLeft();
-//				}
-//				else
-//				{
-//					toBeFound = toBeFound->getRight();
-//				}
-//			}
-//		}
-//		if (!found)
-//			return nullptr;
-//	}
-//	
-//};
+
 };
 
-//template <typename K, typename E>
-//int BinaryTree<K, E>::depth()
-//{
-//	if (root == NULL)
-//		return 0;
-//
-//	// Get the depth of the left and right subtree 
-//	// using recursion.
-//	int leftDepth = depth(root->pLeft);
-//	int rightDepth = depth(root->pRight();
-//
-//	// Choose the larger one and add the root to it.
-//	if (leftDepth > rightDepth)
-//		return leftDepth + 1;
-//	else
-//		return rightDepth + 1;
-//}
-
-//template <typename K, typename E>
-//void BinaryTree<K, E>::findDepth(TNode<K, E>* root)
-//{
-//	// Base case
-//		// Root being null means tree doesn't exist.
-//		if (root == NULL)
-//			return 0;
-//
-//		// Get the depth of the left and right subtree 
-//		// using recursion.
-//		int leftDepth = maxDepth(root->left);
-//		int rightDepth = maxDepth(root->right);
-//
-//		// Choose the larger one and add the root to it.
-//		if (leftDepth > rightDepth)
-//			return leftDepth + 1;
-//		else
-//			return rightDepth + 1;
-//}
-
-//
-//template <typename K, typename E>
-//int BinaryTree<K, E>::maxValue(TNode<K, E>* node)
-//{
-//	if (node == NULL) {
-//		return INT16_MIN;
-//	}
-//	int value = node->getItem();
-//	int leftMax = maxValue(node->getLeft());
-//	int rightMax = maxValue(node->getRight());
-//
-//	return max(value, max(leftMax, rightMax));
-//}
-//
-//
-//
-//template <typename K, typename E>
-//int BinaryTree<K, E>::minValue(TNode<K, E>* node)
-//{
-//	if (node == NULL) {
-//		return INT16_MAX;
-//	}
-//	int value = node->getItem();
-//	int leftMax = minValue(node->getLeft());
-//	int rightMax = minValue(node->getRight());
-//
-//	return min(value, min(leftMax, rightMax));
-//}
-//
-//
-//template <typename K, typename E>
-//int BinaryTree<K, E>::isBST(TNode<K, E>* node)
-//{
-//	if(node == NULL) {
-//		return 1;
-//
-//		/* false if the max of the left is > than us */
-//		if(node->getLeft() != NULL
-//			&& maxValue(node->getLeft()) > node->getItem()) {
-//			return 0;
-//		}
-//
-//
-//		/* false if the min of the right is <= than us */
-//		if(node->getRight() != NULL
-//			&& minValue(node->getLeft()) < node->getItem()) {
-//			return 0;
-//		}
-//
-//
-//		/* false if, recursively, the left or right is not a BST
-//		 */
-//		/*if(!isBST(node->getLeft()) || !isBST(node->getRight()) {
-//			return 0;
-//		}*/
-//
-//	}
-//	/* passing all that, it's a BST */
-//	return 1;
-//}
-//
-//
-//
-//template <typename K, typename E>
-//int BinaryTree<K, E>::SubTree(K keyItem) {
-//
-//	TNode<K, E>* toBeSearched = root;
-//	bool found = false;
-//	int HeightCounter = 0;
-//
-//	while (!found && toBeSearched != nullptr) {
-//
-//			//Finds Null
-//
-//		if (toBeSearched->getKey() == keyItem) {
-//			found = true;
-//			//Finds Node, Finds Value
-//
-//		}
-//		else {
-//
-//			if (toBeSearched->getKey() > keyItem) {
-//				toBeSearched = toBeSearched->getLeft();
-//				//Gets Left Node
-//			}
-//			else {
-//				toBeSearched = toBeSearched->getRight();
-//				//Gets Right Node
-//			}
-//		}
-//	}
-//	if (!found)
-//		return 0;
-//
-//}
 
 template <typename K, typename E>
-int BinaryTree<K, E>::Height(K keyItem) {
-
-	TNode<K, E>* toBeSearched = root;
-	bool found = false;
-	int DepthCounter = 0;
-
-	while (!found && toBeSearched != nullptr) {
-
-		DepthCounter++;
-
-		if (toBeSearched->getKey() == keyItem) {
-			found = true;
-
-
-			return DepthCounter;
-
-		}
-		else {
-
-			if (toBeSearched->getKey() > keyItem) {
-				toBeSearched = toBeSearched->getLeft();
-
-			}
-			else {
-				toBeSearched = toBeSearched->getRight();
-		
-				
-
-			}
-		}
+int BinaryTree<K, E>::Height(TNode<K, E>* root)
+{
+	try
+	{
+		if (root == nullptr)
+			return 0;
+		return 1 + max(Height(root->getLeft()), Height(root->getRight()));
 	}
-	if (!found)
-		return 0;
+	catch (...)
+	{
+		throw runtime_error("Something went wrong!");
+	}
 }
 
 
@@ -274,41 +77,58 @@ int BinaryTree<K, E>::Depth(K keyItem) {
 		return 0;
 
 }
-
 template <typename K, typename E>
-bool BinaryTree<K, E>::search(K keyItem)
+int BinaryTree<K, E>::Balance(TNode<K, E>* root)
 {
-	TNode<K, E>* toBeSearched = root;
-	bool found = false;
-
-	while (!found && toBeSearched != nullptr)
+	try
 	{
-		//This is Searching for Finding
-		if (toBeSearched->getKey() == keyItem)
-		{
+		if (root == nullptr)
+			return true;
+		int lh = Height(root->getLeft());
+		int rh = Height(root->getRight());
 
-			found = true;
-		}
-		else
+		return (abs(lh - rh) <= 1 & Balance(root->getLeft()) & Balance(root->getRight()));
+	}
+	catch (...)
+	{
+		throw runtime_error("Something went wrong!");
+	}
+}
+template <typename K, typename E>
+int BinaryTree<K, E>::search(K keyItem)
+{
+	TNode<K, E>* node = root;
+	try
+	{
+		while (node != nullptr)
 		{
-			if (toBeSearched->getKey() > keyItem)
+			if (node->getKey() == keyItem)
 			{
-				toBeSearched = toBeSearched->getLeft();
+				break;
+			}
+			else if (keyItem < node->getKey())
+			{
+				node = node->getLeft();
 			}
 			else
 			{
-				toBeSearched = toBeSearched->getRight();
+				node = node->getRight();
 			}
 		}
+		if (node != nullptr)
+		{
+			return node->getItem();
+		}
 	}
-	if (!found)
-		return false;
-
-		//This Defines Finding
-
-
+	catch (K keyItem)
+	{
+		throw runtime_error(keyItem + "No Key");
+	}
+	catch (...)
+	{
+		throw runtime_error("ERROR!");
+	}
 }
-
 
 template <typename K, typename E>
 BinaryTree<K,E>::BinaryTree()
@@ -409,15 +229,6 @@ bool BinaryTree<K,E>::remove(K keyItem, E item)
 
 }
 
-template <typename K,typename E>
-E* BinaryTree<K,E>::toArray()
-{
-	E* arr = new E[root->count()];
-	int pos = 0;
-	addItemToArray(root, pos, arr);
-	return arr;
-}
-
 
 template <typename K,typename E>
 BinaryTree<K,E>::~BinaryTree()
@@ -441,70 +252,146 @@ int BinaryTree<K,E>::count()
 	return root->count();
 }
 
+
 template<typename K, typename E>
-inline BinaryTree<K,E> BinaryTree<K, E>::subTree(TNode<K, E>* node)
-{       
-	BinaryTree<typename, typename> tree;
-	if (node == nullptr) {
-		tree.root = node;
+void BinaryTree<K, E>::printInOrder()
+{
+
+	try
+	{
+		this->printInOrder(root);
+		cout << endl;
+	}
+	catch (...)
+	{
+		throw runtime_error("ERROR!");
 	}
 
-
-	return BinaryTree();
 }
-
-template<typename K,typename E>
-void BinaryTree<K,E>::printInOrder()
-{
-	this->printInOrder(root);
-	cout << endl;
-}
-
-template<typename K,typename E>
-void BinaryTree<K,E>::printInOrder(TNode<K,E>* node)
+template<typename K, typename E>
+void BinaryTree<K, E>::printInOrder(TNode<K, E>* node)
 {
 
-	if (node != nullptr)
+	try
 	{
-		printInOrder(node->getLeft());
-		cout << node->getItem() << " ";
-		printInOrder(node->getRight());
+		if (node != nullptr)
+		{
+			printInOrder(node->getLeft());
+			cout << node->getItem() << " ";
+			printInOrder(node->getRight());
+		}
 	}
-}
-template<typename K, typename E>
-void BinaryTree<K,E>::printPreOrder()
-{
-	this->printPreOrder(root);
-	cout << endl;
-}
-
-template<typename K, typename E>
-void BinaryTree<K,E>::printPreOrder(TNode<K,E>* node)
-{
-
-	if (node != nullptr)
+	catch (...)
 	{
-		cout << node->getItem() << " ";
-		printPreOrder(node->getLeft());
-		printPreOrder(node->getRight());
+		throw runtime_error("ERROR!");
 	}
-}
 
-template<typename K, typename E>
-void BinaryTree<K,E>::printPostOrder()
-{
-	this->printPostOrder(root);
-	cout << endl;
 }
 template<typename K, typename E>
-void BinaryTree<K,E>::printPostOrder(TNode<K,E>* node)
+void BinaryTree<K, E>::printPreOrder()
 {
 
-	if (node != nullptr)
+	try
 	{
+		this->printPreOrder(root);
+		cout << endl;
+	}
+	catch (...)
+	{
+		throw runtime_error("ERROR!");
+	}
 
-		printPostOrder(node->getLeft());
-		printPostOrder(node->getRight());
-		cout << node->getItem() << " ";
+}
+
+template<typename K, typename E>
+void BinaryTree<K, E>::printPreOrder(TNode<K, E>* node)
+{
+
+	try
+	{
+		if (node != nullptr)
+		{
+			cout << node->getItem() << " ";
+			printPreOrder(node->getLeft());
+			printPreOrder(node->getRight());
+		}
+	}
+	catch (...)
+	{
+		throw runtime_error("ERROR!");
+	}
+
+}
+template<typename K, typename E>
+void BinaryTree<K, E>::printPostOrder()
+{
+	try
+	{
+		this->printPostOrder(root);
+		cout << endl;
+	}
+	catch (...)
+	{
+		throw runtime_error("ERROR!");
+	}
+
+}
+template<typename K, typename E>
+void BinaryTree<K, E>::printPostOrder(TNode<K, E>* node)
+{
+	try
+	{
+		if (node != nullptr)
+		{
+
+			printPostOrder(node->getLeft());
+			printPostOrder(node->getRight());
+			cout << node->getItem() << " ";
+		}
+	}
+	catch (...)
+	{
+		throw runtime_error("ERROR!");
+	}
+
+}
+
+template <typename K, typename E>
+TNode<K, E>* BinaryTree<K, E>::SubTree(TNode<K, E> *root, K keyItem) {
+    try
+	{
+		if (root == nullptr)
+		{
+			return nullptr;
+		}
+
+		if (root->getKey() == keyItem)
+		{
+			return root;
+		}
+
+		TNode<K, E>* leftSubtree = SubTree(root->getLeft(), keyItem);
+		TNode<K, E>* rightSubtree = SubTree(root->getRight(), keyItem);
+
+		if (leftSubtree != nullptr)
+		{
+			return leftSubtree;
+		}
+		else if (rightSubtree != nullptr)
+		{
+			return rightSubtree;
+		}
+		else
+		{
+			return nullptr;
+		}
+	}
+	catch (K keyItem)
+	{
+		throw runtime_error(keyItem + "No Key");
+	}
+	catch (...)
+	{
+		throw runtime_error("ERROR!");
 	}
 }

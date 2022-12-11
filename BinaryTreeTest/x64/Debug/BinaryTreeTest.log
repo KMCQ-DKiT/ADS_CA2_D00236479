@@ -1,6 +1,19 @@
 ﻿  BinaryTreeTest.cpp
-C:\Users\kylem\source\repos\ADS_CA2_D00236479\ADS_CA2_Tree\BinaryTree.h(310): warning C4715: 'BinaryTree<int,int>::search': not all control paths return a value
-C:\Users\kylem\source\repos\ADS_CA2_D00236479\ADS_CA2_Tree\BinaryTree.h(410): warning C4715: 'BinaryTree<int,int>::remove': not all control paths return a value
-C:\Users\kylem\source\repos\ADS_CA2_D00236479\ADS_CA2_Tree\BinaryTree.h(276): warning C4715: 'BinaryTree<int,int>::Depth': not all control paths return a value
-C:\Users\kylem\source\repos\ADS_CA2_D00236479\ADS_CA2_Tree\BinaryTree.h(244): warning C4715: 'BinaryTree<int,int>::Height': not all control paths return a value
-  BinaryTreeTest.vcxproj -> C:\Users\kylem\source\repos\ADS_CA2_D00236479\x64\Debug\BinaryTreeTest.dll
+C:\Users\kylem\source\repos\ADS_CA2_D00236479v2\ADS_CA2_Tree\BinaryTree.h(90,1): warning C4554: '&': check operator precedence for possible error; use parentheses to clarify precedence
+C:\Users\kylem\source\repos\ADS_CA2_D00236479v2\ADS_CA2_Tree\BinaryTree.h(82,1): message : while compiling class template member function 'int BinaryTree<int,int>::Balance(TNode<K,E> *)'
+          with
+          [
+              K=int,
+              E=int
+          ]
+C:\Users\kylem\source\repos\ADS_CA2_D00236479v2\BinaryTreeTest\BinaryTreeTest.cpp(268,20): message : see reference to function template instantiation 'int BinaryTree<int,int>::Balance(TNode<K,E> *)' being compiled
+          with
+          [
+              K=int,
+              E=int
+          ]
+C:\Users\kylem\source\repos\ADS_CA2_D00236479v2\BinaryTreeTest\BinaryTreeTest.cpp(16,1): message : see reference to class template instantiation 'BinaryTree<int,int>' being compiled
+C:\Users\kylem\source\repos\ADS_CA2_D00236479v2\ADS_CA2_Tree\BinaryTree.h(230): warning C4715: 'BinaryTree<int,int>::remove': not all control paths return a value
+C:\Users\kylem\source\repos\ADS_CA2_D00236479v2\ADS_CA2_Tree\BinaryTree.h(79): warning C4715: 'BinaryTree<int,int>::Depth': not all control paths return a value
+C:\Users\kylem\source\repos\ADS_CA2_D00236479v2\ADS_CA2_Tree\BinaryTree.h(131): warning C4715: 'BinaryTree<int,int>::search': not all control paths return a value
+  BinaryTreeTest.vcxproj -> C:\Users\kylem\source\repos\ADS_CA2_D00236479v2\x64\Debug\BinaryTreeTest.dll

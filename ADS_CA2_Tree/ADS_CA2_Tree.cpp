@@ -6,100 +6,134 @@
 #include "Utilities.h"
 #include "Car.h"
 #include "Date.h"
+#include "TNode.h"
 #include "BinaryTree.h"
 #include "Utilities.h"
+#include "Data.h"
+#include "KeyData.h"
 using namespace std;
 
-void demoSimpleHash();
-void demoDateHash();
-void demoParseString();
-void demoCSVToObject();
+void PrintData();
+void PrintDataKey();
+void HashMethod();
+
+//void Input();
 
 int main()
 {
-	cout << endl << "demoSimpleHash()..........." << endl;
-	demoSimpleHash();
-
-	cout << endl << "demoDateHash()..........." << endl;
-	demoDateHash();
-
-	cout << endl << "demoParseString()..........." << endl;
-	demoParseString();
-
-	cout << endl << "demoCSVToObject()..........." << endl;
-	demoCSVToObject();
+	cout << endl << "PrintKey()..........." << endl;
+	PrintDataKey();
+    cout << endl << "PrintData()..........." << endl;
+    PrintData();
+    cout << endl << "HashMethod()..........." << endl;
+    HashMethod();
 
 
+    //Printing Subtree of Binary Tree
+    BinaryTree<int, int> tree;
+    TNode<int, int>* root = new TNode<int, int>(5, 5);
+    root->setLeft(new TNode<int, int>(4, 4));
+    root->setRight(new TNode<int, int>(10, 10));
+    root->getLeft()->setLeft(new TNode<int, int>(3, 3));
+    root->getLeft()->setRight(new TNode<int, int>(7, 7));
+    root->getLeft()->getLeft()->setLeft(new TNode<int, int>(2, 2));
+    root->getLeft()->getRight()->setRight(new TNode<int, int>(15, 15));
 
-	return 0;
+    cout << "before: " << endl;
+    printBT(root);
+    TNode<int, int>* new_root = tree.SubTree(root, 7);
+    cout << "after: " << endl;
+    printBT(new_root);
+
+	//return 0;
 }
 
-void demoSimpleHash() {
-	//hasher for strings
-	hash<string> hasherStr;
-	string email = "john.smith@hotmail.com";
-	cout << "hash[" << email << "]: " << hasherStr(email) << endl;
+//template<typename K, typename E>
+//void Input()
+//{
+//	
+//	BinaryTree<KeyData, Data> tree;
+//	string fileName = "data/data_1000.csv";
+//	vector<vector<string>> allData = readDelimitedRows(fileName);
+//
+//
+//	for (vector<string> row : allData)
+//	{
+//		for (int i = 0; i <= 5; i++) {
+//
+//			/*KeyData Gkey = new KeyData(row[0], row[2], row[6]);
+//			Data Gdata = new Data(row[0], row[1], row[2], row[3], row[4], row[5], row[6], row[7], row[8], row[9], row[10], row[11], row[12], row[13], row[14]);*/
+//		
+//			tree.add(Car(row[0],[1]));
+//
+//			//cout << Gkey << Gdata << "test" << endl;
+//
+//			/*tree.printInOrder(KeyData(row[0], row[2], row[6]), Data(row[0], row[1], row[2], row[3], row[4], row[5], row[6], row[7], row[8], row[9], row[10], row[11], row[12], row[13], row[14]));*/
+//			cout << "Hello" << endl;
+//		}
+//	}
+//}
 
-	//hasher for doubles
-	hash<double> hasherDbl;
-	double price = 123123.322;
-	cout << "hash[" << price << "]: " << hasherDbl(price) << endl;
-
-	//we can re-use a hasher
-	double weight = 12345.9897;
-	cout << "hash[" << weight << "]: " << hasherDbl(weight) << endl;
-
-	//we can store the hash value using size_t (basically an unsigned int)
-	size_t myHash = hasherStr("this is a hash value store in a uint");
-	cout << myHash << endl;
-}
-
-void demoDateHash() {
-	Date myDate(25, 12, 2022);
-	cout << myDate << endl;
-	cout << "hash[" << myDate << "]: " << myDate.hash() << endl;
-}
-
-//useful - fails when a row of data contains a field (e.g., address) which contains commas
-void demoParseString()
+void PrintDataKey()
 {
-	string str = "ford, 2012, 1299.55, 25/12/2022";
-	string delimiter = ",";
+	string fileName = "data/data_1000.csv";
 
-	vector<string> rowFromCSV = splitString(str, delimiter);
-
-	if (rowFromCSV.size() == 4)
-	{
-		string make = rowFromCSV[0];
-		int year = stoi(rowFromCSV[1]);
-		double price = stod(rowFromCSV[2]);
-		vector<string> dateWords = splitString(rowFromCSV[3], "/");
-
-		if (dateWords.size() == 3)
-		{
-			int date_day = stoi(dateWords[0]);
-			int date_month = stoi(dateWords[1]);
-			int date_year = stoi(dateWords[2]);
-
-			Date registrationDate(date_day, date_month, date_year);
-			Car myCar(make, year, price, registrationDate);
-
-			cout << "Car: " << myCar << endl;
-		}
-	}
-}
-
-//best - supports rows of data that contain commas and parenthesis - thanks for Derek!
-void demoCSVToObject()
-{
-	//note: data is a sub-folder under the folder with main CPP file
-	string fileName = "data/data_4.csv";
 	vector<vector<string>> allData = readDelimitedRows(fileName);
 
-	for (vector<string> row : allData) {
-		for (string field : row) {
-			cout << field << ",";
+	for (vector<string> row : allData)
+	{
+		string user_id = row[0];
+		string first_name = row[2];
+		string email = row[6];
+
+		for (int i = 0; i <= 0; i++) {
+
+
+			cout << row[0] << ", " << row[2] << ", " << row[6] << endl;
+
+			cout << "--------------------------------------------------------------------" << endl;
 		}
-		cout << endl;
 	}
+}
+
+void PrintData()
+{
+    string fileName = "data/data_1000.csv";
+
+    vector<vector<string>> allData = readDelimitedRows(fileName);
+
+    for (vector<string> row : allData)
+    {
+
+        for (int i = 0; i <= 0; i++) {
+
+
+            cout << row[0] << ", " << row[1] << ", " << row[2] << row[3] << ", " << row[4] << ", " << row[5] << ", " << row[6] << ", " << row[7] << ", " << row[8]
+                << ", " << row[9] << ", " << row[10] << ", " << row[11] << ", " << row[12] << ", " << row[13] << ", " << row[14] << ", " << endl;
+
+            cout << "----------------------------------------------------------------------------------------------------------------------------------------------------------------------" << endl;
+        }
+    }
+}
+void HashMethod()
+{
+    string fileName = "data/data_1000.csv";
+
+    vector<vector<string>> allData = readDelimitedRows(fileName);
+
+    for (vector<string> row : allData) {
+
+        hash<string> hasherStr;
+        string user_id_hash = row[0];
+        cout << "IDhash [" << user_id_hash << "] " << endl;
+
+        string first_name_hash = row[2];
+        cout << "Namehash [" << first_name_hash << "] " << endl;
+
+        string email_hash = row[6];
+        cout << "Emailhash [" << email_hash << "] " << endl;
+
+        size_t GamerHash = hasherStr(user_id_hash + first_name_hash + email_hash);
+        cout << "Unique Key [" << GamerHash << "] " << endl << endl;
+    }
 }

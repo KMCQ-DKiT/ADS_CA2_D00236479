@@ -41,5 +41,8 @@
     <ClInclude Include="Data.h">
       <Filter>Header Files\Data</Filter>
     </ClInclude>
+    <ClInclude Include="KeyData.h">
+      <Filter>Header Files\Data</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

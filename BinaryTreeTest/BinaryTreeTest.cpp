@@ -45,13 +45,13 @@ namespace BinaryTreeTest
 		TEST_METHOD(TestCountOnFullTree)
 		{
 			BinaryTree<int,int> tree;
-			tree.add(4,4);
-			tree.add(2,2);
-			tree.add(6,6);
-			tree.add(1,1);
-			tree.add(3,3);
-			tree.add(5,5);
-			tree.add(7,7);
+			tree.add(4,6);
+			tree.add(2,1);
+			tree.add(6,8);
+			tree.add(1,5);
+			tree.add(3,9);
+			tree.add(5,10);
+			tree.add(7,20);
 
 			Assert::AreEqual(7, tree.count());
 		}
@@ -59,13 +59,13 @@ namespace BinaryTreeTest
 		TEST_METHOD(TestRemoveItemNotPresent)
 		{
 			BinaryTree<int,int> tree;
-			tree.add(4,4);
-			tree.add(2,2);
-			tree.add(6,6);
-			tree.add(1,1);
-			tree.add(3,3);
-			tree.add(5,5);
-			tree.add(7,7);
+			tree.add(4, 6);
+			tree.add(2, 1);
+			tree.add(6, 8);
+			tree.add(1, 5);
+			tree.add(3, 9);
+			tree.add(5, 10);
+			tree.add(7, 20);
 			Assert::AreEqual(7, tree.count());
 			tree.remove(8,8);
 			Assert::AreEqual(7, tree.count());
@@ -83,13 +83,13 @@ namespace BinaryTreeTest
 		TEST_METHOD(TestRemoveLeafNode)
 		{
 			BinaryTree<int,int> tree;
-			tree.add(4,4);
-			tree.add(2,2);
-			tree.add(6,6);
-			tree.add(1,1);
-			tree.add(3,3);
-			tree.add(5,5);
-			tree.add(7,7);
+			tree.add(4, 6);
+			tree.add(2, 1);
+			tree.add(6, 8);
+			tree.add(1, 5);
+			tree.add(3, 9);
+			tree.add(5, 10);
+			tree.add(7, 20);
 			Assert::AreEqual(7, tree.count());
 			tree.remove(5,5);
 			Assert::AreEqual(6, tree.count());
@@ -107,13 +107,13 @@ namespace BinaryTreeTest
 		TEST_METHOD(TestRemoveNodeWithOneChild)
 		{
 			BinaryTree<int,int> tree;
-			tree.add(4,4);
-			tree.add(2,2);
-			tree.add(6,6);
-			tree.add(1,1);
-			tree.add(5,5);
-			tree.add(7,7);
-			tree.add(8,8);
+			tree.add(4, 6);
+			tree.add(2, 1);
+			tree.add(6, 8);
+			tree.add(1, 5);
+			tree.add(3, 9);
+			tree.add(5, 10);
+			tree.add(7, 20);
 			Assert::AreEqual(7, tree.count());
 			tree.remove(7,7);
 			Assert::AreEqual(6, tree.count());
@@ -130,13 +130,13 @@ namespace BinaryTreeTest
 		TEST_METHOD(TestRemoveNodeWithTwoChildren)
 		{
 			BinaryTree<int,int> tree;
-			tree.add(4,4);
-			tree.add(2,2);
-			tree.add(6,6);
-			tree.add(1,1);
-			tree.add(3,3);
-			tree.add(5,5);
-			tree.add(7,7);
+			tree.add(4, 6);
+			tree.add(2, 1);
+			tree.add(6, 8);
+			tree.add(1, 5);
+			tree.add(3, 9);
+			tree.add(5, 10);
+			tree.add(7, 20);
 			Assert::AreEqual(7, tree.count());
 			tree.remove(2,2);
 			Assert::AreEqual(6, tree.count());
@@ -182,13 +182,13 @@ namespace BinaryTreeTest
 		TEST_METHOD(SearchIsTrue)
 		{
 			BinaryTree<int, int> tree;
-			tree.add(4, 4);
-			tree.add(2, 2);
-			tree.add(6, 6);
-			tree.add(1, 1);
-			tree.add(3, 3);
-			tree.add(5, 5);
-			tree.add(7, 7);
+			tree.add(4, 6);
+			tree.add(2, 1);
+			tree.add(6, 8);
+			tree.add(1, 5);
+			tree.add(3, 9);
+			tree.add(5, 10);
+			tree.add(7, 20);
 			tree.search(7);
 			Assert::IsTrue(tree.search(7));
 		}
@@ -196,28 +196,43 @@ namespace BinaryTreeTest
 		TEST_METHOD(SearchIsFalse)
 		{
 			BinaryTree<int, int> tree;
-			tree.add(4, 4);
-			tree.add(2, 2);
-			tree.add(6, 6);
-			tree.add(1, 1);
-			tree.add(3, 3);
-			tree.add(5, 5);
-			tree.add(7, 7);
-			tree.search(7);
+			tree.add(4, 6);
+			tree.add(2, 1);
+			tree.add(6, 8);
+			tree.add(1, 5);
+			tree.add(3, 9);
+			tree.add(5, 10);
+			tree.add(7, 20);
+		
 			Assert::IsFalse(tree.search(90));
 		}
 
+		TEST_METHOD(TestGetSubTree)
+		{
 
+		
+
+			BinaryTree<int, int> tree;
+			TNode<int, int>* root = new TNode<int, int>(10, 10);
+			root->setLeft(new TNode<int, int>(4, 4));
+			root->setRight(new TNode<int, int>(15, 15));
+			root->getLeft()->setLeft(new TNode<int, int>(3, 3));
+			root->getLeft()->setRight(new TNode<int, int>(16, 16));
+			root->getLeft()->getLeft()->setLeft(new TNode<int, int>(2, 2));
+			root->getLeft()->getRight()->setRight(new TNode<int, int>(17, 17));
+			TNode<int, int>* new_root = tree.SubTree(root, 15);
+
+		}
 		TEST_METHOD(SearchDepth)
 		{
 			BinaryTree<int, int> tree;
-			tree.add(4, 4);
-			tree.add(2, 2);
-			tree.add(6, 6);
-			tree.add(1, 1);
-			tree.add(3, 3);
-			tree.add(5, 5);
-			tree.add(7, 7);
+			tree.add(4, 6);
+			tree.add(2, 1);
+			tree.add(6, 8);
+			tree.add(1, 5);
+			tree.add(3, 9);
+			tree.add(5, 10);
+			tree.add(7, 20);
 			Assert::AreEqual(2, tree.Depth(3));
 
 		}
@@ -234,21 +249,25 @@ namespace BinaryTreeTest
 			tree.add(5, 5);
 			tree.add(7, 7);
 			tree.add(8, 8);
-			Assert::AreEqual(2, tree.Height(6));
+			Assert::AreEqual(4, tree.Height(tree.root));
 		}
-		TEST_METHOD(SubTree)
+		TEST_METHOD(TestfindBalance)
 		{
+			// Test with empty tree
 			BinaryTree<int, int> tree;
-			tree.add(4, 4);
-			tree.add(2, 2);
-			tree.add(6, 6);
-			tree.add(1, 1);
+			TNode<int, int>* root = tree.root;
+			tree.add(8, 8);
 			tree.add(3, 3);
-			tree.add(5, 5);
-			tree.add(7, 7);
-			tree.subTree(tree.root->getLeft());
-			Assert::IsTrue(tree.root->getLeft());
-		}
+			tree.add(10, 10);
+			tree.add(3, 3);
+			tree.add(2, 2);
+			tree.add(15, 15);
+			tree.add(13, 13);
+			tree.add(12, 12);
+
+			Assert::AreEqual(1, tree.Balance(root));
+
+		};
 
 
 		//Pass in to check if is true to equal 7

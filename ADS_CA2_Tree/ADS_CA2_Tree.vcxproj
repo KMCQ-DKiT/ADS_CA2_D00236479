@@ -134,6 +134,7 @@
     <ClInclude Include="Data.h" />
     <ClInclude Include="Date.h" />
     <ClInclude Include="Car.h" />
+    <ClInclude Include="KeyData.h" />
     <ClInclude Include="TNode.h" />
     <ClInclude Include="Utilities.h" />
   </ItemGroup>

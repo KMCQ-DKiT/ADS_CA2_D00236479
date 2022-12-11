@@ -11,7 +11,7 @@ class Data {
 #pragma region Fields
 private:
 	string user_id;
-	int current_ranking;
+	string current_ranking;
 	string first_name;
 	string surname;
 	string gender;
@@ -31,7 +31,7 @@ private:
 public:
 
 #pragma region Constructors
-	Data(string user_id, int current_ranking, string first_name, string surname,
+	Data(string user_id, string current_ranking, string first_name, string surname,
 		string gender, Date date_of_birth, string email, string postcode, string country, string account_credit)
 		: user_id(user_id), current_ranking(current_ranking), first_name(first_name), surname(surname),
 		gender(gender), date_of_birth(date_of_birth), email(email), postcode(postcode), country(country), account_credit(account_credit)
@@ -41,7 +41,7 @@ public:
 
 #pragma region Get/Set
 	string getUserId() const { return this->user_id; }
-	int getRanking() const { return this->current_ranking; }
+	string getRanking() const { return this->current_ranking; }
 	string getFirstName() const { return this->first_name; }
 	string getSurName() const { return this->surname; }
 	string getGender() const { return this->gender; }
